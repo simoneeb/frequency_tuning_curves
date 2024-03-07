@@ -31,7 +31,7 @@ nb_stimuli = 25
 sampling_frequency = 20000.0
 
 # load analog
-fp = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/{exp_name}/analog/{exp_name}_analog.h5'
+fp = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/{exp_name}/analog/{exp_name}_analog.h5'
 data_voltf = h5py.File(fp, 'r')
 data_volt = data_voltf['Data']
 data_volt = data_volt['Recording_0']
@@ -42,7 +42,7 @@ data_voltf.close()
 
 
 # load spikes
-fp = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/{exp_name}/sorting/{exp_name}_results_curated.hdf5'
+fp = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/{exp_name}/sorting/{exp_name}_results_curated.hdf5'
 dat = h5py.File(fp, 'r')
 
 keys = list(dat['spiketimes'].keys())
@@ -51,7 +51,7 @@ spiketimes = dat['spiketimes'] # spike times in frames
 
 
 #load events
-fp = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/{exp_name}/sync/event_list_{exp_name}_.csv'
+fp = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/{exp_name}/sync/event_list_{exp_name}_.csv'
 events = pd.read_csv(fp)
 
 
@@ -386,7 +386,7 @@ for key in tqdm(keys):
 
 
 #save data
-fpdata = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}'
+fpdata = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}'
 
 if not os.path.isdir(fpdata):
     os.mkdir(fpdata)

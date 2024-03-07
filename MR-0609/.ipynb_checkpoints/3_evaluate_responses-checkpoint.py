@@ -18,13 +18,13 @@ import os
 exp_name = 'MR-0609'
 
 #load data picke: 
-fpdata = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/data.pkl'
+fpdata = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/data.pkl'
 
 with open(fpdata, "rb") as handle:   #Pickling
     data = pickle.load(handle)
 
 
-keys = list(data.keys())[1:-3]
+keys = list(data.keys())[3:]
 
 intensities = list(data['stimuli'].keys())
 #grating_types = list(data['stimuli'][intensities[0]].keys())
@@ -189,7 +189,7 @@ with open(fpdata, "wb") as handle:
 
 
 # save df
-fpdataheat = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/dataframe.csv'
+fpdataheat = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/dataframe.csv'
 heatdf.to_csv(fpdataheat)
 
 

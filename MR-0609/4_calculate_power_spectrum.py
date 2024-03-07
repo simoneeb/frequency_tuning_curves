@@ -76,15 +76,15 @@ def power_spectrum(signal,time, show = True, nb_pad =0, reg = True):
 # load data
 
 exp_name = 'MR-0609'
-fpdata = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/data.pkl'
+fpdata = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/data.pkl'
 
 with open(fpdata, "rb") as handle:   #Pickling
     data = pickle.load(handle)
 
-keys = list(data.keys())[3:]
+keys = list(data.keys())[1:-3]
 #keys = keys[:4]
 
-fpdataheat = f'/user/sebert/home/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/dataframe.csv'
+fpdataheat = f'/Users/simone/Documents/Experiments/Spatiotemporal_tuning_curves/Results/{exp_name}/dataframe.csv'
 frequency_df = pd.read_csv(fpdataheat)
 
 
@@ -217,7 +217,6 @@ for key in tqdm(keys):
                 data[key][i][grat]['fpeaks'].append(peaks)
 
                 # add data to dataframe
-
                 frequency_df.loc[(frequency_df['key'] == key) & (frequency_df['stim_id'] == nbs), 'F1'] = amp_ft
                 frequency_df.loc[(frequency_df['key'] == key )& (frequency_df['stim_id'] == nbs), 'zF1']= amp_ft
 

@@ -186,7 +186,7 @@ for key in tqdm(keys):
 
     
 data['stimuli']['chirp']={}
-data['stimuli']['chirp']['time']= time
+data['stimuli']['chirp']['time']=time
 data['stimuli']['chirp']['stim'] = stim
 
 
